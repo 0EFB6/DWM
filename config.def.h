@@ -85,6 +85,7 @@ static const char *restart[] = { "/sbin/reboot", NULL };
 static const char *audio[] = { "audio", NULL };
 static const char *windowcapture[] = { "winsct", NULL };
 static const char *rofi[] = { "rof", NULL };
+static const char *stui[] = { "stui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -96,6 +97,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_o,	   spawn,	   {.v = screencapturing } },
 	{ 0,							XK_Print,  spawn,		   {.v = print_screen_cmd } },
 	{ MODKEY,						XK_Print,  spawn,		   {.v = windowcapture } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = stui } }
 	{ MODKEY,						XK_l,	   spawn,		   {.v = lock } },
 	{ MODKEY,						XK_z,	   spawn,		   {.v = brave} },
 	{ MODKEY,						XK_s,	   spawn,		   {.v = music} },
