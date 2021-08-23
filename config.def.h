@@ -79,9 +79,9 @@ static const char *shutdown[] = { "/sbin/poweroff", NULL };
 static const char *restart[] = { "/sbin/reboot", NULL };
 static const char *audio[] = { "audio", NULL };
 static const char *windowcapture[] = { "winsct", NULL };
-static const char *rofi[] = { "rofi -show run", NULL};
+static const char *rofi[] = { "rof", NULL};
 static const char *stui[] = { "stui", NULL };
-static const char *rofiwindow[] = { "rofi -show window", NULL};
+static const char *rofiwindow[] = { "rofwin", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -113,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,		XK_a,	   spawn,	   {.v = rofiwindow } },
+	{ MODKEY,			XK_a,	   spawn,	   {.v = rofiwindow } },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
