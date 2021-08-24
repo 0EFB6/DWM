@@ -22,7 +22,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "", "", "", "12"}; */
-static const char *tags[] = { "Skool             ", "        Dev         ", "       Fil       ", "       Oce      ", "      Msc      ", "       Etc        ", "       Dd       ", "       Tty       ", "     Misc    "};
+static const char *tags[] = { "                         ", "                     ", "                    ", "                ", "                  ", "                     ", "                   ", "                    ", "               "};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -82,6 +82,8 @@ static const char *windowcapture[] = { "winsct", NULL };
 static const char *rofi[] = { "rof", NULL};
 static const char *stui[] = { "stui", NULL };
 static const char *rofiwindow[] = { "rofwin", NULL};
+static const char *skoolon[] = { "pseudocamon", NULL };
+static const char *skooloff[] = { "pseudocamoff", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,6 +93,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_e,	   spawn,	   {.v = file } },
 	{ MODKEY,			XK_d,	   spawn,	   {.v = dd } },
 	{ MODKEY,			XK_o,	   spawn,	   {.v = screencapturing } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = skoolon } },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = skooloff } },
 	{ 0,							XK_Print,  spawn,		   {.v = print_screen_cmd } },
 	{ MODKEY,			XK_Print,  spawn,	   {.v = windowcapture } },
 	{ MODKEY,						XK_y,	   spawn,		   {.v = stui } },
