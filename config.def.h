@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	{ "Xmessage", NULL,	  NULL,	      0,            1,		 -1 },
 	{ "obs",      NULL,	  NULL,	      1 << 8,      0,		 -1},
 	{ "Alacritty",NULL,	  NULL,	      1 << 7,      0,		 -1},
-	{ "discord",  NULL,	  NULL,	      1 << 6,	    0,	    	 -1},
+	{ "discord",  NULL,	  NULL,			  0,	        0,	    	 -1},
 	/*{ "Pcmanfm",  NULL,	  NULL,	      1 << 2,	    0,		 -1},*/
 };
 
@@ -47,10 +47,21 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[]=",      monocle },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "[M]",      tile },
 };
+
+/*
+ *shift       Shift_L (0x32),  Shift_R (0x3e)
+ *lock        Caps_Lock (0x42)
+ *control     Control_L (0x25),  Control_R (0x6d)
+ *mod1        Alt_L (0x40),  Alt_L (0x7d),  Meta_L (0x9c)
+ *mod2        Num_Lock (0x4d)
+ *mod3      
+ *mod4        Super_L (0x7f),  Hyper_L (0x80)
+ *mod5        Mode_switch (0x5d),  ISO_Level3_Shift (0x7c)
+*/
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -123,10 +134,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_u,	   spawn,	   {.v = shutdown } },
 	{ MODKEY|ShiftMask,		XK_r,	   spawn,	   {.v = restart } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	/*{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },*/
+	/*{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },*/
+	/*{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },*/
+	/*{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },*/
+	{ 0,				XK_F6,	   spawn,	   {.v = lock } },
+	{ 0, 				XK_F3,	   focusstack,     {.i = +1 } },
+	{ 0,				XK_F4,     focusstack,     {.i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
