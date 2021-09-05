@@ -95,6 +95,7 @@ static const char *stui[] = { "stui", NULL };
 static const char *rofiwindow[] = { "rofwin", NULL};
 static const char *skoolon[] = { "pseudocamon", NULL };
 static const char *skooloff[] = { "pseudocamoff", NULL };
+static const char *chrome[] = { "chromium", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -106,6 +107,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_o,	   spawn,	   {.v = screencapturing } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = skoolon } },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = skooloff } },
+	{ MODKEY,			XK_g,	   spawn,	   {.v = chrome } },
 	{ 0,							XK_Print,  spawn,		   {.v = print_screen_cmd } },
 	{ MODKEY,			XK_Print,  spawn,	   {.v = windowcapture } },
 	{ MODKEY,						XK_y,	   spawn,		   {.v = stui } },
