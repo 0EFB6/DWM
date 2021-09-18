@@ -6,9 +6,9 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "fontawesome:size=16" };
+static const char *fonts[]          = { "fontawesome:size=13" };
 /* "monospace:size=15" */
-static const char dmenufont[]       = "fontawesome:size=16";
+static const char dmenufont[]       = "fontawesome:size=13";
 static const char col_gray1[]       = "#f9ea0e";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#01070C";
@@ -98,6 +98,8 @@ static const char *skoolon[] = { "pseudocamon", NULL };
 static const char *skooloff[] = { "pseudocamoff", NULL };
 static const char *chrome[] = { "chromium", NULL };
 
+#include "movestack.c"
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,	   spawn,          {.v = rofi } },
@@ -120,6 +122,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_grave,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	/* Movestack Patches*/
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,			XK_q,	   spawn,	   {.v = audio } },
 	/*{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },*/
 	/*{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },*/
