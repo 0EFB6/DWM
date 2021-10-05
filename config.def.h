@@ -6,7 +6,7 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "fontawesome:size=13" };
+static const char *fonts[]          = { "fontawesome:size=8" };
 /* "monospace:size=15" */
 static const char dmenufont[]       = "fontawesome:size=13";
 static const char col_gray1[]       = "#f9ea0e";
@@ -22,7 +22,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "", "", "", "12"}; */
-static const char *tags[] = { "                         ", "                     ", "                    ", "                ", "                  ", "                     ", "                   ", "                    ", "               "};
+static const char *tags[] = { "                                        ", "                                     ", "                                      ", "                                  ", "                           ", "                               ", "                                ", "                               ", "                            "};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -98,6 +98,7 @@ static const char *rofiwindow[] = { "rofwin", NULL};
 static const char *skoolon[] = { "pseudocamon", NULL };
 static const char *skooloff[] = { "pseudocamoff", NULL };
 static const char *chrome[] = { "chromium", NULL };
+static const char *zoomoff[] = { "zoomoff", NULL };
 
 #include "movestack.c"
 
@@ -123,6 +124,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,      togglebar,      {0} },
 	{ MODKEY,                       XK_grave,      focusstack,     {.i = +1 } },
 	{ MODKEY,			XK_z,	   focusstack,     {.i = +1 } },
+	{ MODKEY|ShiftMask,		XK_z,	   spawn,	   {.v = zoomoff } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	/* Movestack Patches*/
